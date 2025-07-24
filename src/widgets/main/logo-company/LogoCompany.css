@@ -1,0 +1,73 @@
+.logo-company-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  padding: var(--spacing-md) 0;
+}
+
+.logo-company-track {
+  display: inline-flex;
+  animation: scroll-logos 30s linear infinite;
+  gap: var(--spacing-lg);
+}
+
+.logo-company-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 60px;
+}
+
+.logo-company-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.7);
+  transition: filter var(--default-transition-duration) var(--default-transition-timing-function);
+}
+
+.logo-company-item:hover img {
+  filter: grayscale(0%) opacity(1);
+}
+
+@keyframes scroll-logos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Пауза анимации при наведении */
+.logo-company-container:hover .logo-company-track {
+  animation-play-state: paused;
+}
+
+/* Адаптивные размеры */
+@media (max-width: 768px) {
+  .logo-company-item {
+    width: 100px;
+    height: 50px;
+  }
+  
+  .logo-company-track {
+    gap: var(--spacing-md);
+    animation-duration: 25s;
+  }
+}
+
+@media (min-width: 1440px) {
+  .logo-company-item {
+    width: 140px;
+    height: 70px;
+  }
+  
+  .logo-company-track {
+    gap: var(--spacing-xl);
+    animation-duration: 35s;
+  }
+}

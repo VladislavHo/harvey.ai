@@ -1,0 +1,11 @@
+import { ASK_DATA_LIST } from "../../../shared/config/ask_data";
+import { SimpleCards } from "../../cards";
+
+export default function Ask() {
+  return (
+    <section className="max-w-default p-0">
+      <h2 className="text-center">Just Ask Harvey</h2>
+      <SimpleCards list={ASK_DATA_LIST} />
+    </section>
+  )
+}

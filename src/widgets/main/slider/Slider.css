@@ -1,0 +1,148 @@
+.swiper {
+  width: 90%;
+  height: 100%;
+  padding: var(--spacing-md) 0;
+}
+
+.swiper-slide {
+
+}
+
+
+
+.slide-content {
+  width: 100%;
+  color: var(--text-primary);
+}
+
+.slide-content h3 {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.slide-content p {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+}
+
+/* Кастомизация навигации */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--text-primary);
+  background: var(--background-secondary);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: var(--background-secondary-hover);
+}
+
+/* Кастомизация пагинации */
+.swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  opacity: 1;
+  border:1px solid var(--color-gray-600);
+  margin: 0 20px;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-gray-600);
+  border:1px solid var(--color-gray-600);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
+.slider--bg {
+  /* flex: 0 0 auto; */
+  /* -webkit-box-shadow: 0px -90px 80px 33px rgba(0, 0, 0, 0.6) inset;
+  -moz-box-shadow: 0px -90px 80px 33px rgba(0, 0, 0, 0.6) inset;
+  box-shadow: 0px -90px 80px 33px rgba(0, 0, 0, 0.6) inset; */
+  -webkit-box-shadow: 0px -100px 100px -27px rgba(0, 0, 0, 0.83) inset;
+  -moz-box-shadow: 0px -100px 100px -27px rgba(0, 0, 0, 0.83) inset;
+  box-shadow: 0px -100px 100px -27px rgba(0, 0, 0, 0.83) inset;
+}
+
+/* Стили для неактивных слайдов - затемнение */
+.swiper-slide:not(.swiper-slide-active) {
+  opacity: 0.8;
+  filter: brightness(0.3);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Стили для активного слайда */
+.swiper-slide-active {
+  opacity: 1;
+  filter: brightness(1);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Дополнительное затемнение для соседних слайдов */
+.swiper-slide-next,
+.swiper-slide-prev {
+  opacity: 0.7;
+  filter: brightness(0.8);
+}
+
+/* Адаптивность для мобильных - еще больше затемнения */
+@media (max-width: 768px) {
+  .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0.4;
+    filter: brightness(0.6);
+  }
+
+  .swiper-slide-next,
+  .swiper-slide-prev {
+    opacity: 0.8;
+    filter: brightness(0.7);
+  }
+}
+
+.card {
+  /* border-radius: 12px; */
+}
+
+.slider--bg {
+  transition: transform 0.3s ease;
+  transform-origin: center;
+
+}
+
+.slider--bg--wrapper {
+  overflow: hidden;
+  border-radius: 4px 4px 0 0;
+
+}
+
+.card:hover .slider--bg {
+  transform: scale(1.1);
+  border-radius: 10px 10px 0 0;
+}
+
+.slider--bg img {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .slider--bg img {
+  transform: scale(0.91);
+  /* 1 / 1.1 ≈ 0.91 */
+}

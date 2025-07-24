@@ -1,0 +1,43 @@
+export const ABOUT_PLATFORM_DATA_LIST = [
+  {
+    id: 1,
+    imgName: "about_platform-1.png",
+    sup: "Assistant",
+    title: "Tailored to Your Expertise",
+    p: "Delegate complex tasks in natural language to your domain-specific personal assistant.",
+    a: "Explore Assistant",
+    to: "/",
+    className: "",
+  },
+    {
+    id: 2,
+    imgName: "about_platform-2.png",
+    sup: "Assistant",
+    title: "Tailored to Your Expertise",
+    p: "Delegate complex tasks in natural language to your domain-specific personal assistant.",
+    a: "Explore Assistant",
+    to: "/",
+    className: "flex-row-reverse",
+  },
+    {
+    id: 3,
+    imgName: "about_platform-3.png",
+    sup: "Assistant",
+    title: "Tailored to Your Expertise",
+    p: "Delegate complex tasks in natural language to your domain-specific personal assistant.",
+    a: "Explore Assistant",
+    to: "/",
+    className: "",
+  },
+    {
+    id: 4,
+    imgName: "about_platform-4.png",
+    sup: "Assistant",
+    title: "Tailored to Your Expertise",
+    p: "Delegate complex tasks in natural language to your domain-specific personal assistant.",
+    a: "Explore Assistant",
+    to: "/",
+    className: "flex-row-reverse",
+  },
+  
+]
