@@ -1,7 +1,11 @@
+
 @tailwind utilities;
+
 @import "tailwindcss";
 
+
 :root {
+    --harvey-serif: "HarveySerifFont";
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --spacing: .25rem;
@@ -124,10 +128,13 @@
     background-color: var(--background-secondary);
 }
 
-.btn-default{
+.btn-default {
     outline: 0;
     border: 0;
 }
+/* .font-title{
+    font-family: var(--font-harvey-serif);
+} */
 .bg-destructive {
     background-color: var(--background-destructive);
 }
@@ -146,4 +153,8 @@
 
 .bg-light-oxford {
     background-color: var(--color-light-oxford);
+}
+
+.font-harvey-serif {
+    font-family: var(--font-harvey-serif);
 }

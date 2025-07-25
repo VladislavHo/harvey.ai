@@ -1,6 +1,6 @@
-import { useState, useEffect, RefObject } from 'react';
+import { useState, useEffect, type RefObject } from 'react';
 
-export const useVideoScroll = (ref: RefObject<HTMLElement>, initialWidth: number = 60, maxWidth: number = 100) => {
+export const useVideoScroll = (ref: RefObject<HTMLElement | null>, initialWidth: number = 60, maxWidth: number = 100) => {
   const [width, setWidth] = useState(initialWidth);
 
   useEffect(() => {

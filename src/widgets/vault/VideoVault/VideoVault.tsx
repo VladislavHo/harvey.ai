@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 
 export default function VideoVault({ image, video }: { image: string, video: string }) {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -21,7 +21,7 @@ export default function VideoVault({ image, video }: { image: string, video: str
   }, [isModalOpen])
   return (
     <>
-      <section className='max-w-default flex flex-col items-center gap-3 p-0'>
+      <section className='max-w-default flex flex-col items-center gap-3 '>
         <figure>
           <img src={image} alt="intro" />
         </figure>

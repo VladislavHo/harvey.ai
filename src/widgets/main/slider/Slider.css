@@ -4,9 +4,7 @@
   padding: var(--spacing-md) 0;
 }
 
-.swiper-slide {
-
-}
+.swiper-slide {}
 
 
 
@@ -53,13 +51,13 @@
   width: 15px;
   height: 15px;
   opacity: 1;
-  border:1px solid var(--color-gray-600);
+  border: 1px solid var(--color-gray-600);
   margin: 0 20px;
 }
 
 .swiper-pagination-bullet-active {
   background: var(--color-gray-600);
-  border:1px solid var(--color-gray-600);
+  border: 1px solid var(--color-gray-600);
 }
 
 /* Адаптивность */
@@ -145,4 +143,19 @@
 .card:hover .slider--bg img {
   transform: scale(0.91);
   /* 1 / 1.1 ≈ 0.91 */
+}
+
+@media screen and (max-width: 1020px) {
+  .slider--info {
+    flex-direction: column;
+    padding: 0 0 30px 0;
+  }
+  .slider--bg{
+    height: auto !important;
+  }
+  .slider--info .info {
+    flex-direction: column;
+    gap: 4px;
+    display: flex;
+  }
 }

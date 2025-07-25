@@ -16,7 +16,7 @@ export default function IntroMain({
   linkTo
 }: IIntroMap) {
   return (
-    <section className='flex flex-col items-center gap-5 max-w-[1920px] pt-30 pb-10'>
+    <section className='flex flex-col items-center gap-5 max-w-[1920px] pt-40 pb-10'>
       
       {subtitle && <p className="universal-text-1 text-pretty font-medium text-gray-200">{subtitle}</p>}
       <div className='text-center pt-1'>

@@ -3,7 +3,7 @@ import { SimpleCards } from "../../cards";
 
 export default function Ask() {
   return (
-    <section className="max-w-default p-0">
+    <section className="max-w-default flex flex-col gap-xl">
       <h2 className="text-center">Just Ask Harvey</h2>
       <SimpleCards list={ASK_DATA_LIST} />
     </section>

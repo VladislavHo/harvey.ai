@@ -1,26 +1,35 @@
 import { useState } from 'react'
 import logo from '../../../public/logo.svg'
+import { FooterUnlockInfo } from '../main'
 
 export default function Footer() {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null)
 
   const getLinkClasses = (linkId: string) => {
-    const baseClasses = "flex duration-300 w-full text-start text-sm bg-transparent leading-[130%] font-medium group transition-colors ease-in-out text-wrap cursor-pointer"
+    const baseClasses = "flex duration-300 w-full text-start text-sm bg-transparent leading-[130%] font-medium group transition-colors ease-in-out text-wrap cursor-pointer relative"
     
     if (hoveredLink === null) {
-      return `${baseClasses} text-primary hover:text-secondary`
-    }
-    
-    if (hoveredLink === linkId) {
       return `${baseClasses} text-primary`
     }
     
-    return `${baseClasses} text-gray-600`
+    if (hoveredLink === linkId) {
+      return `${baseClasses} text-primary` // Активная ссылка остается белой
+    }
+    
+    return `${baseClasses} text-gray-600` // Остальные ссылки становятся серыми
+  }
+
+  const getUnderlineClasses = (linkId: string) => {
+    if (hoveredLink === linkId) {
+      return "absolute bottom-0 left-0 w-full h-[1px] bg-primary" // Белая линия для активной ссылки
+    }
+    return "absolute bottom-0 left-0 w-full h-[1px] bg-gray-600" // Серая линия для остальных
   }
 
   return (
-    <footer className='max-w-default py-20 border-t border-gray-800'>
-      <div className="footer--main flex">
+    <footer className='max-w-default border-t border-gray-800 '>
+      <FooterUnlockInfo/>
+      <div className="footer--main flex py-lg ">
         <div className="logo--wrapper w-full">
           <div className="logo">
             <img src={logo} alt="logo" />
@@ -39,6 +48,9 @@ export default function Footer() {
             >
               Assistant
               <span className="-ml-[2px] opacity-0 group-hover:opacity-100 group-hover:ml-1 transition-all ease-in-out">→</span>
+              {hoveredLink === 'assistant-1' && (
+                <div className={getUnderlineClasses('assistant-1')}></div>
+              )}
             </a>
             <a 
               className={getLinkClasses('vault-1')}
@@ -48,6 +60,9 @@ export default function Footer() {
             >
               Vault
               <span className="-ml-[2px] opacity-0 group-hover:opacity-100 group-hover:ml-1 transition-all ease-in-out">→</span>
+              {hoveredLink === 'vault-1' && (
+                <div className={getUnderlineClasses('vault-1')}></div>
+              )}
             </a>
             <a 
               className={getLinkClasses('knowledge-1')}
@@ -57,6 +72,9 @@ export default function Footer() {
             >
               Knowledge
               <span className="-ml-[2px] opacity-0 group-hover:opacity-100 group-hover:ml-1 transition-all ease-in-out">→</span>
+              {hoveredLink === 'knowledge-1' && (
+                <div className={getUnderlineClasses('knowledge-1')}></div>
+              )}
             </a>
             <a 
               className={getLinkClasses('workflows-1')}
@@ -66,6 +84,9 @@ export default function Footer() {
             >
               Workflows
               <span className="-ml-[2px] opacity-0 group-hover:opacity-100 group-hover:ml-1 transition-all ease-in-out">→</span>
+              {hoveredLink === 'workflows-1' && (
+                <div className={getUnderlineClasses('workflows-1')}></div>
+              )}
             </a>
           </div>
           <div className="flex flex-col gap-4 w-[120px]">
@@ -80,6 +101,9 @@ export default function Footer() {
             >
               About
               <span className="-ml-[2px] opacity-0 group-hover:opacity-100 group-hover:ml-1 transition-all ease-in-out">→</span>
+              {hoveredLink === 'about' && (
+                <div className={getUnderlineClasses('about')}></div>
+              )}
             </a>
             <a 
               className={getLinkClasses('careers')}
@@ -89,6 +113,9 @@ export default function Footer() {
             >
               Careers
               <span className="-ml-[2px] opacity-0 group-hover:opacity-100 group-hover:ml-1 transition-all ease-in-out">→</span>
+              {hoveredLink === 'careers' && (
+                <div className={getUnderlineClasses('careers')}></div>
+              )}
             </a>
             <a 
               className={getLinkClasses('contact')}
@@ -98,6 +125,9 @@ export default function Footer() {
             >
               Contact
               <span className="-ml-[2px] opacity-0 group-hover:opacity-100 group-hover:ml-1 transition-all ease-in-out">→</span>
+              {hoveredLink === 'contact' && (
+                <div className={getUnderlineClasses('contact')}></div>
+              )}
             </a>
             <a 
               className={getLinkClasses('blog')}
@@ -107,11 +137,21 @@ export default function Footer() {
             >
               Blog
               <span className="-ml-[2px] opacity-0 group-hover:opacity-100 group-hover:ml-1 transition-all ease-in-out">→</span>
+              {hoveredLink === 'blog' && (
+                <div className={getUnderlineClasses('blog')}></div>
+              )}
             </a>
           </div>
         </div>
       </div>
-      <div className="footer--bottom"></div>
+      <div className="footer--bottom flex justify-between items-center">
+        <span className='universal-text-3 text-balance text-gray-600 lg:max-w-full'>Copyright © 2025 Counsel AI Corporation. All rights reserved.</span>
+        <div className='flex gap-3 items-center '>
+          <a className='flex transition-colors duration-300 ease-out w-max items-center justify-center text-center hover:text-gray-50-ivory active:text-gray-200 universal-text-3 text-balance text-gray-600 cursor-pointer' href="/">X</a> 
+          <span className='text-gray-600'>|</span>
+          <a className='flex transition-colors duration-300 ease-out w-max items-center justify-center text-center hover:text-gray-50-ivory active:text-gray-200 universal-text-3 text-balance text-gray-600 cursor-pointer' href="/">LinkedIn</a>
+        </div>
+      </div>
     </footer>
   )
 }

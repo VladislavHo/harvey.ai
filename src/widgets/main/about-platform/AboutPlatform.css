@@ -1,0 +1,5 @@
+@media screen and (max-width: 1020px) {
+  .about--platform{
+    flex-direction: column !important;
+  }
+}

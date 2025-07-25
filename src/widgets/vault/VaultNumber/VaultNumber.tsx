@@ -1,10 +1,9 @@
-import React from 'react'
 
 export default function VaultNumber() {
   return (
-    <section className='max-w-default'>
+    <section className='max-w-default w-full flex flex-col gap-lg'>
       <h2 className='text-center'>Vault by the Numbers</h2>
-      <div className='flex items-center justify-between'>
+      <div className='flex items-center justify-between w-full'>
         <div className='flex flex-col gap-sm text-center md:flex-1'>
           <p className='heading-1'>97%</p>
           <p className='heading-4'>accuracy on key term extraction</p>

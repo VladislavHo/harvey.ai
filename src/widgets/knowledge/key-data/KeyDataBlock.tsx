@@ -1,5 +1,7 @@
 import { KEY_DATA_BLOCK_LIST } from "../../../shared/config/key_data";
 import { SimpleCard } from "../../card";
+import "./KeyDataBlock.css"
+
 
 export default function KeyDataBlock() {
   return (

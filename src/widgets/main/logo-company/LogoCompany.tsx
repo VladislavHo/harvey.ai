@@ -2,7 +2,7 @@ import { LOGO_COMPANY_DATA_LIST } from '../../../shared/config/logo_company'
 import "./LogoCompany.css"
 export default function LogoCompany() {
   return (
-    <section className="logo-company-container">
+    <section className="logo-company-container flex flex-col items-center gap-sm">
       <h3 className='text-center'>Built for Industry Leaders</h3>
       <div className="logo-company-track">
         {/* Первый набор логотипов */}

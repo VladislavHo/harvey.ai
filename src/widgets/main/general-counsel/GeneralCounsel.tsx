@@ -1,4 +1,5 @@
 
+import "./GeneralCounsel.css"
 interface IGeneralCounsel {
   imagePerson: string,
   text: string,
@@ -10,10 +11,10 @@ interface IGeneralCounsel {
 export default function GeneralCounsel({ imagePerson, text, name, position, company }: IGeneralCounsel) {
   return (
     <section className='counsel w-full py-16 bg-light-oxford'>
-      <div className="counsel--wrapper flex justify-between items-center gap-8 max-w-[1370px] mx-auto">
+      <div className="counsel--wrapper flex justify-between  items-center gap-8 max-w-[1370px] mx-auto">
         <div className="bg w-full">
 
-          <div className="img bg-cover bg-center bg-no-repeat max-w-[590px] h-[590px]" style={{ backgroundImage: `url(${imagePerson})` }}></div>
+          <div className="img bg-cover bg-center bg-no-repeat aspect-square w-full rounded-sm bg-gray-800" style={{ backgroundImage: `url(${imagePerson})` }}></div>
 
         </div>
         <div className="info w-full flex items-center justify-center">

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { useVideoScroll } from '../../shared/lib/hooks/useVideoScroll'
 
 export default function Video() {

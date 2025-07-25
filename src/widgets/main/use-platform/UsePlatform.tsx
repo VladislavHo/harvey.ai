@@ -1,12 +1,13 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import { useState, useRef, useEffect } from 'react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+
 import { USE_PLATFORM_DATA_LIST } from '../../../shared/config/use_platform';
 import AboutPlatform from '../about-platform/AboutPlatform';
 import "./UsePlatform.css"
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function UsePlatform() {
   // const [activeIndex, setActiveIndex] = useState(0);
@@ -18,14 +19,14 @@ export default function UsePlatform() {
 
   useEffect(() => {
     // Обновляем прогресс для активного элемента
-    const activeElement = document.querySelector('.use-platform .swiper-pagination-bullet-active .bullet-progress');
+    const activeElement = document.querySelector('.use-platform .swiper-pagination-bullet-active .bullet-progress') as HTMLElement;
     if (activeElement) {
       activeElement.style.transform = `translateX(${progress - 100}%)`;
     }
   }, [progress]);
 
   return (
-    <section className='use-platform max-w-[1370px] '>
+    <section className='use-platform max-w-[1370px] w-full'>
       <div className='text-center'>
         <span className='heading-4 text-balance text-center'>Solutions for All Lawyers</span>
         <h2 className='heading-3 text-balance'>How Lawyers Use Harvey</h2>
@@ -51,11 +52,11 @@ export default function UsePlatform() {
                       </span>`;
             }
           }}
-          onSlideChange={(swiper) => {
+          onSlideChange={() => {
             // setActiveIndex(swiper.activeIndex);
             setProgress(0);
           }}
-          onAutoplayTimeLeft={(swiper, time, progress) => {
+          onAutoplayTimeLeft={(_swiper, _time, progress) => {
             setProgress((1 - progress) * 100);
           }}
           breakpoints={{

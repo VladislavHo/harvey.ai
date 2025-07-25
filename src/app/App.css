@@ -18,8 +18,25 @@ h1 {
   font-size: var(--text-3xl);
   letter-spacing: -.015em;
   text-wrap: balance;
-  line-height: 1.05;
+  line-height: 1.05
+}
 
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4.5rem
+  }
+}
+
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 5rem
+  }
+}
+
+@media (min-width: 1728px) {
+  h1 {
+    font-size: 6rem
+  }
 }
 
 h2 {
@@ -30,18 +47,24 @@ h2 {
   font-feature-settings: "liga" on, "calt" on;
   font-size: var(--text-2xl);
   letter-spacing: -.0125em;
-  line-height: 1.05;
-}
-
-@media (min-width: 1440px) {
-  h2 {
-    font-size: 3.5rem;
-  }
+  line-height: 1.05
 }
 
 @media (min-width: 1024px) {
   h2 {
-    font-size: 3rem;
+    font-size: 3rem
+  }
+}
+
+@media (min-width: 1440px) {
+  h2 {
+    font-size: 3.5rem
+  }
+}
+
+@media (min-width: 1728px) {
+  h2 {
+    font-size: 4rem
   }
 }
 
@@ -56,6 +79,24 @@ h3 {
   line-height: 1.05
 }
 
+@media (min-width: 1024px) {
+  h3 {
+    font-size: 2rem
+  }
+}
+
+@media (min-width: 1440px) {
+  h3 {
+    font-size: 2.25rem
+  }
+}
+
+@media (min-width: 1728px) {
+  h3 {
+    font-size: 2.5rem
+  }
+}
+
 h4 {
   font-style: normal;
   font-weight: 400;
@@ -64,7 +105,17 @@ h4 {
   font-weight: 500;
   font-size: var(--text-lg);
   line-height: 1.3;
-  font-family: var(--font-harvey-sans);
+  font-family: var(--font-harvey-sans)
+}
+
+h4,
+p {
+  text-wrap: pretty
+}
+
+p {
+  font-size: var(--text-base);
+  line-height: 130%
 }
 
 section,
@@ -117,6 +168,78 @@ footer {
   font-size: var(--text-huge);
   letter-spacing: -.0175em;
   line-height: 105%
+}
+
+@media (min-width: 1024px) {
+  .heading-1 {
+    font-size: 4.5rem
+  }
+}
+
+@media (min-width: 1440px) {
+  .heading-1 {
+    font-size: 5rem
+  }
+}
+
+@media (min-width: 1728px) {
+  .heading-1 {
+    font-size: 6rem
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-0 {
+    font-size: 8rem
+  }
+}
+
+@media (min-width: 1440px) {
+  .heading-0 {
+    font-size: 9rem
+  }
+}
+
+@media (min-width: 1728px) {
+  .heading-0 {
+    font-size: 10rem
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-2 {
+    font-size: 3rem
+  }
+}
+
+@media (min-width: 1440px) {
+  .heading-2 {
+    font-size: 3.5rem
+  }
+}
+
+@media (min-width: 1728px) {
+  .heading-2 {
+    font-size: 4rem
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-3 {
+    font-size: 2rem
+  }
+}
+
+@media (min-width: 1440px) {
+  .heading-3 {
+    font-size: 2.25rem
+  }
+}
+
+@media (min-width: 1728px) {
+  .heading-3 {
+    font-size: 2.5rem
+  }
 }
 
 .universal-text-2 {
@@ -183,20 +306,146 @@ footer {
   }
 }
 
-    @media (min-width: 1024px) {
-        .heading-3 {
-            font-size:2rem
-        }
-    }
+@media (min-width: 1024px) {
+  .heading-3 {
+    font-size: 2rem
+  }
+}
 
-    @media (min-width: 1440px) {
-        .heading-3 {
-            font-size:2.25rem
-        }
-    }
+@media (min-width: 1440px) {
+  .heading-3 {
+    font-size: 2.25rem
+  }
+}
 
-    @media (min-width: 1728px) {
-        .heading-3 {
-            font-size:2.5rem
-        }
-    }
+@media (min-width: 1728px) {
+  .heading-3 {
+    font-size: 2.5rem
+  }
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-sm {
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.universal-text-3 {
+  font-size: var(--text-sm);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --spacing-xl: 9rem;
+    --spacing-lg: 4.5rem;
+    --spacing-md: 2.25rem;
+    --spacing-sm: 1.125rem;
+    --spacing-xs: .5625rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --spacing-top-page-spacing: 4.125rem;
+    --spacing-xl: 8rem;
+    --spacing-lg: 4rem;
+    --spacing-md: 2rem;
+    --spacing-sm: 1rem;
+    --spacing-xs: .5rem;
+  }
+}
+
+.gap-lg {
+  gap: var(--spacing-lg)
+}
+
+.gap-md {
+  gap: var(--spacing-md)
+}
+
+.gap-px {
+  gap: 1px
+}
+
+.gap-sm {
+  gap: var(--spacing-sm)
+}
+
+.gap-xl {
+  gap: var(--spacing-xl)
+}
+
+.gap-xs {
+  gap: var(--spacing-xs)
+}
+
+.py-lg {
+  padding-block: var(--spacing-lg)
+}
+
+.py-md {
+  padding-block: var(--spacing-md)
+}
+
+.py-sm {
+  padding-block: var(--spacing-sm)
+}
+
+.py-xl {
+  padding-block: var(--spacing-xl)
+}
+
+.pt-lg {
+  padding-top: var(--spacing-lg)
+}
+
+.pt-md {
+  padding-top: var(--spacing-md)
+}
+
+.pt-px {
+  padding-top: 1px
+}
+
+.pt-sm {
+  padding-top: var(--spacing-sm)
+}
+
+.text-base {
+  font-size: var(--text-base);
+  line-height: var(--tw-leading, var(--text-base--line-height))
+}
+
+.text-lg {
+  font-size: var(--text-lg);
+  line-height: var(--tw-leading, var(--text-lg--line-height))
+}
+
+.text-sm {
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height))
+}
+
+.text-xl {
+  font-size: var(--text-xl);
+  line-height: var(--tw-leading, var(--text-xl--line-height))
+}
+
+.text-xs {
+  font-size: var(--text-xs);
+  line-height: var(--tw-leading, var(--text-xs--line-height))
+}

@@ -1,4 +1,4 @@
-
+import "./AboutPlatform.css"
 export default function AboutPlatform(
   { imgName = '',
     sup = '',
@@ -9,11 +9,11 @@ export default function AboutPlatform(
     className = ''
   }) {
   return (
-    <div className={`flex justify-center ${className}`} >
-      <div className="bg" style={{width: "100%"}}>
+    <div className={`about--platform flex  ${className} `} >
+      <div className="bg" style={{ width: "100%" }}>
         <img width={"100%"} height={524} src={`/img/${imgName}`} alt="img" />
       </div>
-      <div className="info flex w-full flex-col items-center justify-center bg-gray-900" style={{width: "100%"}}>
+      <div className="info flex w-full flex-col items-center justify-center bg-gray-900" style={{ width: "100%" }}>
         <div className="info--wrapper flex w-full flex-col gap-5 px-7 py-lg md:px-24">
           <span className="heading-4 relative font-normal capitalize">{sup}</span>
           <h2 className="text-balance">{title}</h2>

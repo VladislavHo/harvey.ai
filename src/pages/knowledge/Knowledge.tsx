@@ -1,30 +1,32 @@
-import { FooterUnlockInfo, GeneralCounsel, IntroMain, KeyDataBlock, Map } from "../../widgets"
+import { GeneralCounsel, IntroMain, KeyDataBlock, Map } from "../../widgets"
 import imagePerson from "../../../public/img/Bivek_Sharma.png"
 
 export default function Knowledge() {
 
   return (
     <main>
-      <IntroMain
-        subtitle="Welcome to Harvey AI"
-        title_1="Professional"
-        title_2="Class AI"
-        text="Domain-specific AI for law firms, professional service providers, and the Fortune 500."
-        linkLabel="Request a Demo"
-        linkTo="/about"
-      />
-      <section className="max-w-default">
-        <Map />
-      </section>
-      <KeyDataBlock />
-      <GeneralCounsel
-        imagePerson={imagePerson}
-        text="“What we’re doing with generative AI is supercharging careers by 1-2 years at a minimum. Our junior members don’t want to join an organization that isn’t using AI.”"
-        name="Bivek Sharma"
-        position="Chief AI Officer"
-        company="PwC UK"
-      />
-      <FooterUnlockInfo />
+      <div className="flex flex-col gap-xl">
+        <IntroMain
+          subtitle="Welcome to Harvey AI"
+          title_1="Professional"
+          title_2="Class AI"
+          text="Domain-specific AI for law firms, professional service providers, and the Fortune 500."
+          linkLabel="Request a Demo"
+          linkTo="/about"
+        />
+        <section className="max-w-default w-full">
+          <Map />
+        </section>
+        <KeyDataBlock />
+        <GeneralCounsel
+          imagePerson={imagePerson}
+          text="“What we’re doing with generative AI is supercharging careers by 1-2 years at a minimum. Our junior members don’t want to join an organization that isn’t using AI.”"
+          name="Bivek Sharma"
+          position="Chief AI Officer"
+          company="PwC UK"
+        />
+      </div>
+
     </main>
   )
 }

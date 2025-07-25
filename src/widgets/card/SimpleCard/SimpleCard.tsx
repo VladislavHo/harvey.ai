@@ -7,7 +7,7 @@ export default function SimpleCard({ el, className }: { el: any, className?: str
       </div>
       <div className="info flex grow flex-col rounded-b bg-gray-900 p-7 md:p-8 lg:py-[36px] lg:pl-[36px] lg:pr-[116px] xl:py-[40px] xl:pl-[40px] xl:pr-[140px]">
         <h4 className="mb-[.625rem] font-harvey-serif text-xl">{el.title}</h4>
-        <p className="universal-text-2 max-w-[440px]">{el.description}</p>
+        <p className="universal-text-2 max-w-[440px] h-[40px]">{el.description}</p>
       </div>
     </div>
   )

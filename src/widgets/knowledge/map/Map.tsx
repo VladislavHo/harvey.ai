@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { ComposableMap, Geographies, Geography, Graticule } from 'react-simple-maps';
 import { highlightedCountries, mediumHighlightedCountries } from '../../../shared/config/countries_map';
 import { GEO_URL } from '../../../shared/config/constants';
 
 export default function Map() {
   const [tooltip, setTooltip] = useState({ show: false, name: "", x: 0, y: 0 });
-  const [selectedRegion, setSelectedRegion] = useState("Globe");
+  const [selectedRegion, setSelectedRegion] = useState<keyof typeof regionConfigs>("Globe");
 
   // Список стран для выделения светлым цветом
 
@@ -14,23 +14,23 @@ export default function Map() {
   const regionConfigs = {
     Globe: {
       scale: 137,
-      center: [0, 0]
+      center: [0, 0] as [number, number]
     },
     Americas: {
       scale: 150,
-      center: [-100, 10]
+      center: [-100, 10] as [number, number]
     },
     Europe: {
       scale: 350,
-      center: [10, 40]
+      center: [10, 40] as [number, number]
     },
     APAC: {
       scale: 210,
-      center: [120, 0]
+      center: [120, 0] as [number, number]
     }
-  };
+  } as const;
 
-  const handleMouseEnter = (geo, event) => {
+  const handleMouseEnter = (geo:any, event:any) => {
     const countryName = geo.properties.name;
     const isInList = highlightedCountries.includes(countryName) || mediumHighlightedCountries.includes(countryName);
 
@@ -48,7 +48,7 @@ export default function Map() {
     setTooltip({ show: false, name: "", x: 0, y: 0 });
   };
 
-  const handleMouseMove = (event) => {
+  const handleMouseMove = (event: React.MouseEvent) => {
     if (tooltip.show) {
       setTooltip(prev => ({
         ...prev,
@@ -58,7 +58,7 @@ export default function Map() {
     }
   };
 
-  const handleRegionChange = (region) => {
+  const handleRegionChange = (region: keyof typeof regionConfigs) => {
     setSelectedRegion(region);
   };
 
@@ -75,7 +75,7 @@ export default function Map() {
           {Object.keys(regionConfigs).map((region) => (
             <button
               key={region}
-              onClick={() => handleRegionChange(region)}
+              onClick={() => handleRegionChange(region as keyof typeof regionConfigs)}
               style={{
                 // padding: "8px 16px",
                 // backgroundColor: selectedRegion === region ? "var(--color-gray-400)" : "var(--color-gray-800)",

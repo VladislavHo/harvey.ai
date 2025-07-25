@@ -2,6 +2,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 
 // Импорт стилей Swiper
+
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -58,15 +60,15 @@ export default function Slider() {
           <SwiperSlide key={el.id}>
             <a href={el.link.href} className="slide-link">
               <div className="card rounded-3xl">
-                <div className="slider--bg--wrapper h-[500px]">
-                  <div className="slider--bg max-w-full h-[500px]  bg-no-repeat bg-center bg-cover flex justify-center items-center" style={{ backgroundImage: `url(/img/slider/${el.image.name}.${el.image.format})` }}>
+                <div className="slider--bg--wrapper">
+                  <div className="slider--bg aspect-square w-full h-[500px] rounded-sm bg-gray-800 bg-no-repeat bg-center bg-cover flex justify-center items-center" style={{ backgroundImage: `url(/img/slider/${el.image.name}.${el.image.format})` }}>
                     <img src={`/svg/slider-person/${el.icon.name}.${el.icon.format}`} alt={el.icon.name} />
                   </div>
                 </div>
 
                 <div className="slider--info flex justify-between items-start p-4 gap-6">
                   <div className="info">
-                    <h4>{el.description}</h4>
+                    <h4 className='text-base sm:text-lg'>{el.description}</h4>
                     <p className='text-sm sm:text-base text-gray-400'>{el.person}</p>
                   </div>
                   <Link label='Read Case Study' to='/' />

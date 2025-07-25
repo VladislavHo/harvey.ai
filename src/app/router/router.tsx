@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router";
 // import Main from "../../pages/main/Main";
 import { Layout } from "../../widgets";
-import TestPage from "../../pages/test-page/TestPage";
 import { Assistant, Knowledge, Main, Vault, Workflows } from "../../pages";
 
 
@@ -16,10 +15,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Main />,
-      },
-      {
-        path: "/test",
-        element: <TestPage />,
       },
       {
         path: "/platform/knowledge",
