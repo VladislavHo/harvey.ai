@@ -23,7 +23,7 @@ export default function MobileMenu({ isOpen }: MobileMenuProps) {
       <div className="flex flex-col h-full">
         <div className="nav-mobule--header flex-shrink-0"></div>
 
-        <nav className="flex-1 overflow-y-auto pt-60">
+        <nav className={`flex-1 overflow-y-auto ${!isPlatformOpen ? "pt-60": "pt-30" } transition-all`}>
           <div className="flex flex-col gap-8">
             {/* Platform dropdown */}
             <div className="w-full">
