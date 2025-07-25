@@ -1,6 +1,6 @@
 import { AboutPlatform, Ask, GeneralCounsel, IntroMain, VideoVault } from "../../widgets";
 import intro_image_video from "../../../public/img/intro_assistant.svg"
-import video from "../../../public/video/intro.mp4"
+// import video from "../../../public/video/intro.mp4"
 import imagePerson from "../../../public/img/David_Wakeling.png"
 export default function Assistant() {
   return (
@@ -14,7 +14,7 @@ export default function Assistant() {
           linkLabel="Request a Demo"
           linkTo="/about"
         />
-        <VideoVault image={intro_image_video} video={video} />
+        <VideoVault image={intro_image_video} video={"../../../public/video/intro.mp4"} />
         <Ask />
         <section className="">
           <AboutPlatform

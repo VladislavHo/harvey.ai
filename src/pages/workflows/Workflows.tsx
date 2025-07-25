@@ -1,6 +1,6 @@
 import { AboutPlatform, GeneralCounsel, IntroMain, MoveForwards, VideoVault } from "../../widgets";
 import intro_image_video from "../../../public/img/intro_workflows.svg"
-import video from "../../../public/video/intro.mp4"
+// import video from "../../../public/video/intro.mp4"
 import imagePerson from "../../../public/img/David_Cunningham.png"
 
 export default function Workflows() {
@@ -15,7 +15,7 @@ export default function Workflows() {
           linkLabel="Request a Demo"
           linkTo="/about"
         />
-        <VideoVault image={intro_image_video} video={video} />
+        <VideoVault image={intro_image_video} video={"../../../public/video/intro.mp4"} />
         <MoveForwards />
         <section className="">
           <AboutPlatform

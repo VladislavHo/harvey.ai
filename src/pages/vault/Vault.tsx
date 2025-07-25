@@ -3,7 +3,7 @@ import imagePerson from "../../../public/img/Pablo_Blanco.jpeg"
 import { Insights, VaultNumber } from '../../widgets/vault'
 
 import intro_image_video from "../../../public/img/intro_vault.svg"
-import video from "../../../public/video/intro.mp4"
+// import video from "../../../public/video/intro.mp4"
 export default function Vault() {
   return (
     <main>
@@ -16,7 +16,7 @@ export default function Vault() {
           linkLabel="Request a Demo"
           linkTo="/about"
         />
-        <VideoVault image={intro_image_video} video={video} />
+        <VideoVault image={intro_image_video} video={"../../../public/video/intro.mp4"} />
         <Insights />
         <VaultNumber />
         <GeneralCounsel
