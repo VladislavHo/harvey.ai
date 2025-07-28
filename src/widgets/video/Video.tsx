@@ -9,7 +9,7 @@ export default function Video() {
     <section className="video max-w-[1920px]">
       <div 
         ref={videoWrapperRef}
-        className="video--wrapper my-0 mx-auto transition-all duration-300 ease-out"
+        className="video--wrapper my-0 mx-auto"
         style={{width: `${width}%`}}
       >
         <video controls playsInline src='./video/intro.mp4' preload='false' poster='./video/intro.jpeg'/>

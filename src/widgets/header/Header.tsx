@@ -2,8 +2,14 @@ import { BurgerMenu, Link } from "../../shared/ui";
 import { useState, useEffect, useRef } from "react";
 import platformImage from "../../../public/img/header.png"
 import MobileMenu from "./MobileMenu";
+import ModalHeader from "./ModalHeader";
+import { NAVBAR_LINKS_LIST } from "../../shared/config/links";
+
+
+
 export default function Header() {
   const [isPlatformDropdownOpen, setIsPlatformDropdownOpen] = useState(false);
+  const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isLinkVisible, setIsLinkVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -18,7 +24,7 @@ export default function Header() {
 
   const headerRef = useRef<HTMLDivElement>(null);
   const platformRef = useRef<any>(null);
-  const aboutRef = useRef<HTMLLIElement>(null);
+  const solutionsRef = useRef<HTMLLIElement>(null);
   const contactRef = useRef<HTMLLIElement>(null);
   const loginRef = useRef<HTMLSpanElement>(null);
 
@@ -34,7 +40,7 @@ export default function Header() {
       setIsMobile(false);
     }
   }, [window.innerWidth]);
-console.log(fullLineStyle)
+  console.log(fullLineStyle)
 
   // Функция для получения классов ссылки в зависимости от состояния hover
   const getLinkClasses = (linkName: string) => {
@@ -114,10 +120,10 @@ console.log(fullLineStyle)
   }, []);
 
   // Получаем ref по имени ссылки
-  const getRefByName = (name: string):any => {
+  const getRefByName = (name: string): any => {
     switch (name) {
       case 'platform': return platformRef;
-      case 'about': return aboutRef;
+      case 'solutions': return solutionsRef;
       case 'contact': return contactRef;
       case 'login': return loginRef;
       default: return platformRef;
@@ -173,6 +179,7 @@ console.log(fullLineStyle)
       } else if (currentScrollY > lastScrollY && currentScrollY > 10) {
         setIsVisible(false);
         setIsPlatformDropdownOpen(false);
+        setIsSolutionsDropdownOpen(false);
       }
 
       setLastScrollY(currentScrollY);
@@ -218,7 +225,7 @@ console.log(fullLineStyle)
                     }}
                   >
                     <a
-                      href="/platform/knowledge"
+                      href="#"
                       className={`flex items-center ${getLinkClasses('platform')}`}
                     >
                       Platform
@@ -239,120 +246,60 @@ console.log(fullLineStyle)
                     )}
 
                     {isPlatformDropdownOpen && (
-                      <div
-                        className="fixed w-full top-[92px] left-0 bg-primary shadow-lg z-50 py-20"
-                      >
-                        <div className="max-w-[900px] mx-auto my-0 flex justify-between">
-                          <ul className="py-2 w-full flex flex-col justify-between">
-                            <li className="max-w-[300px]">
-                              <a
-                                href="/platform/knowledge"
-                                className="block transition-colors duration-300 ease-out"
-                                onMouseEnter={() => handleDropdownMouseEnter('knowledge')}
-                                onMouseLeave={handleDropdownMouseLeave}
-                              >
-                                <h3 className={`text-sm font-harvey-sans transition-colors duration-300 mb-[5px] ${hoveredDropdownLink === null || hoveredDropdownLink === 'knowledge'
-                                  ? 'text-white'
-                                  : 'text-gray-600'
-                                  }`}>
-                                  Knowledge <span className="-ml-0.25 duration-400 group-hover:opacity-100 group-hover:ml-1">→</span>
-                                </h3>
-                                <p className={`text-sm font-harvey-sans transition-colors duration-300 ${hoveredDropdownLink === null || hoveredDropdownLink === 'knowledge'
-                                  ? 'text-gray-300'
-                                  : 'text-gray-600'
-                                  }`}>
-                                  Ask questions, analyze documents, and draft faster with domain-specific AI.
-                                </p>
-                              </a>
-                            </li>
-                            <li className="max-w-[300px]">
-                              <a
-                                href="/platform/vault"
-                                className="block transition-colors duration-300 ease-out"
-                                onMouseEnter={() => handleDropdownMouseEnter('vault')}
-                                onMouseLeave={handleDropdownMouseLeave}
-                              >
-                                <h3 className={`text-sm font-harvey-sans transition-colors duration-300 mb-[5px] ${hoveredDropdownLink === null || hoveredDropdownLink === 'vault'
-                                  ? 'text-white'
-                                  : 'text-gray-600'
-                                  }`}>
-                                  Vault <span className="-ml-0.25 duration-400 group-hover:opacity-100 group-hover:ml-1">→</span>
-                                </h3>
-                                <p className={`text-sm font-harvey-sans transition-colors duration-300 ${hoveredDropdownLink === null || hoveredDropdownLink === 'vault'
-                                  ? 'text-gray-300'
-                                  : 'text-gray-600'
-                                  }`}>
-                                  Securely store, organize, and bulk-analyze legal documents.
-                                </p>
-                              </a>
-                            </li>
-                            <li className="max-w-[300px]">
-                              <a
-                                href="/platform/assistant"
-                                className="block transition-colors duration-300 ease-out"
-                                onMouseEnter={() => handleDropdownMouseEnter('assistant')}
-                                onMouseLeave={handleDropdownMouseLeave}
-                              >
-                                <h3 className={`text-sm font-harvey-sans transition-colors duration-300 mb-[5px] ${hoveredDropdownLink === null || hoveredDropdownLink === 'assistant'
-                                  ? 'text-white'
-                                  : 'text-gray-600'
-                                  }`}>
-                                  Assistant <span className="-ml-0.25 duration-400 group-hover:opacity-100 group-hover:ml-1">→</span>
-                                </h3>
-                                <p className={`text-sm font-harvey-sans transition-colors duration-300 ${hoveredDropdownLink === null || hoveredDropdownLink === 'assistant'
-                                  ? 'text-gray-300'
-                                  : 'text-gray-600'
-                                  }`}>
-                                  Research complex legal, regulatory, and tax questions across domains.
-                                </p>
-                              </a>
-                            </li>
-                            <li className="max-w-[300px]">
-                              <a
-                                href="/platform/workflows"
-                                className="block transition-colors duration-300 ease-out"
-                                onMouseEnter={() => handleDropdownMouseEnter('workflows')}
-                                onMouseLeave={handleDropdownMouseLeave}
-                              >
-                                <h3 className={`text-sm font-harvey-sans transition-colors duration-300 mb-[5px] ${hoveredDropdownLink === null || hoveredDropdownLink === 'workflows'
-                                  ? 'text-white'
-                                  : 'text-gray-600'
-                                  }`}>
-                                  Workflows <span className="-ml-0.25 duration-400 group-hover:opacity-100 group-hover:ml-1">→</span>
-                                </h3>
-                                <p className={`text-sm font-harvey-sans transition-colors duration-300 ${hoveredDropdownLink === null || hoveredDropdownLink === 'workflows'
-                                  ? 'text-gray-300'
-                                  : 'text-gray-600'
-                                  }`}>
-                                  Run pre-built workflows or build your own, tailored to your firm's needs.
-                                </p>
-                              </a>
-                            </li>
-                          </ul>
-                          <div className="w-full">
-                            <div className="mb-6 overflow-hidden rounded-sm">
-                              <img src={platformImage} alt="img" />
-                            </div>
-                            <h3 className="text-sm font-harvey-sans mb-[3px] transition-colors duration-300 text-muted">Introducing Workflow Builder</h3>
-                            <p className="text-sm font-harvey-sans transition-colors duration-300 text-muted">Design and deploy customizable workflows designed to capture your firm’s differentiators and deliver high-quality legal work.</p>
-                          </div>
-                        </div>
-                      </div>
+                      // <ModalHeader />
+                      <ModalHeader
+                        handleDropdownMouseLeave={handleDropdownMouseLeave}
+                        handleDropdownMouseEnter={handleDropdownMouseEnter}
+                        hoveredDropdownLink={hoveredDropdownLink}
+                        platformImage={platformImage}
+                        data={NAVBAR_LINKS_LIST.platform}
+                      />
                     )}
                   </li>
                   <li
-                    ref={aboutRef}
-                    onMouseEnter={() => handleMouseEnter('about')}
-                    onMouseLeave={handleMouseLeave}
+                    ref={solutionsRef}
+                    className="relative h-full"
+                    onMouseEnter={() => {
+                      setIsSolutionsDropdownOpen(true);
+                      handleMouseEnter('solutions');
+                    }}
+                    onMouseLeave={() => {
+                      setIsSolutionsDropdownOpen(false);
+                      handleMouseLeave();
+                    }}
                   >
                     <a
                       href="#"
-                      className={getLinkClasses('about')}
+                      className={`flex items-center ${getLinkClasses('solutions')}`}
                     >
-                      About
+                      Solutions
+                      <svg
+                        className={`ml-1 w-4 h-4 transition-transform duration-200 ${isSolutionsDropdownOpen ? 'rotate-180' : ''
+                          }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
                     </a>
+
+                    {/* Невидимый мост между ссылкой и dropdown */}
+                    {isSolutionsDropdownOpen && (
+                      <div className="absolute top-full left-0 w-48 h-[68px] bg-transparent z-40" />
+                    )}
+
+                    {isSolutionsDropdownOpen && (
+                      <ModalHeader
+                        handleDropdownMouseLeave={handleDropdownMouseLeave}
+                        handleDropdownMouseEnter={handleDropdownMouseEnter}
+                        hoveredDropdownLink={hoveredDropdownLink}
+                        platformImage={platformImage}
+                        data={NAVBAR_LINKS_LIST.solutions}
+                      />
+                    )}
                   </li>
-                  <li
+                  {/* <li
                     ref={contactRef}
                     onMouseEnter={() => handleMouseEnter('contact')}
                     onMouseLeave={handleMouseLeave}
@@ -363,7 +310,7 @@ console.log(fullLineStyle)
                     >
                       Contact
                     </a>
-                  </li>
+                  </li> */}
                 </ul>
               </nav>
 

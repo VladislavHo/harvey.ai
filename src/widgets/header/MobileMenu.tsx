@@ -1,3 +1,4 @@
+import { NAVBAR_LINKS_LIST } from "../../shared/config/links";
 import { ArrayIcon } from "../svg/SVG";
 import { useState } from "react";
 
@@ -8,12 +9,7 @@ interface MobileMenuProps {
 export default function MobileMenu({ isOpen }: MobileMenuProps) {
   const [isPlatformOpen, setIsPlatformOpen] = useState(false);
 
-  const platformLinks = [
-    { href: "/platform/knowledge", label: "Knowledge", text: "Ask questions, analyze documents, and draft faster with domain-specific AI." },
-    { href: "/platform/vault", label: "Vault", text: "Securely store, organize, and bulk-analyze legal documents." },
-    { href: "/platform/assistant", label: "Assistant", text: " Research complex legal, regulatory, and tax questions across domains." },
-    { href: "/platform/workflows", label: "Workflows", text: " Run pre-built workflows or build your own, tailored to your firm's needs." }
-  ];
+
 
   return (
     <div
@@ -41,7 +37,7 @@ export default function MobileMenu({ isOpen }: MobileMenuProps) {
               <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isPlatformOpen ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'
                 }`}>
                 <div className="flex flex-col gap-4 pl-4 max-h-[400px] overflow-y-auto">
-                  {platformLinks.map((link) => (
+                  {NAVBAR_LINKS_LIST.platform.map((link) => (
                     <a
                       key={link.href}
                       href={link.href}
