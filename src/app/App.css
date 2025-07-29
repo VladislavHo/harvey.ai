@@ -449,3 +449,27 @@ footer {
   font-size: var(--text-xs);
   line-height: var(--tw-leading, var(--text-xs--line-height))
 }
+
+.p-lg {
+  padding: var(--spacing-lg)
+}
+
+.p-md {
+  padding: var(--spacing-md)
+}
+
+.p-sm {
+  padding: var(--spacing-sm)
+}
+
+.bg-light-oxford {
+  background-color: var(--color-light-oxford)
+}
+
+.bg-light-plaster {
+  background-color: var(--color-light-plaster)
+}
+
+.text-primary-inverse {
+  color: var(--text-primary-inverse)
+}

@@ -25,3 +25,4 @@ dist-ssr
 # Large video files
 public/video/*.mp4
 public/video/intro.mp4
+.qodo

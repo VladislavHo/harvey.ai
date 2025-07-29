@@ -2,7 +2,7 @@
 import KeyDataBlock from './key-data/KeyDataBlock';
 import Map from './map/Map';
 
-export {
+export const KnowledgeWidgets =  {
   Map,
   KeyDataBlock
 }

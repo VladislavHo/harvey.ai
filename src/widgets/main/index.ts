@@ -7,7 +7,8 @@ import LogoCompany from "./logo-company/LogoCompany";
 import Slider from "./slider/Slider";
 import  UnlockBlock from "./unlock-block/UnlockBlock";
 import UsePlatform from "./use-platform/UsePlatform";
-export {
+
+export const MainWidgets =  {
   IntroMain,
   LogoCompany,
   AboutPlatform,

@@ -11,7 +11,7 @@ export default function AboutPlatform(
   return (
     <div className={`about--platform flex  ${className} `} >
       <div className="bg" style={{ width: "100%" }}>
-        <img width={"100%"} height={524} src={`/img/${imgName}`} alt="img" />
+        <img width={"100%"} height={524} src={`/img/key_data/${imgName}`} alt="img" />
       </div>
       <div className="info flex w-full flex-col items-center justify-center bg-gray-900" style={{ width: "100%" }}>
         <div className="info--wrapper flex w-full flex-col gap-5 px-7 py-lg md:px-24">

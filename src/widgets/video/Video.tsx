@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useVideoScroll } from '../../shared/lib/hooks/useVideoScroll'
 
-export default function Video() {
+export default function Video({poster}: { poster: string }) {
   const videoWrapperRef = useRef<HTMLDivElement>(null);
   const width = useVideoScroll(videoWrapperRef);
 
@@ -12,7 +12,7 @@ export default function Video() {
         className="video--wrapper my-0 mx-auto"
         style={{width: `${width}%`}}
       >
-        <video controls playsInline src='./video/intro.mp4' preload='false' poster='./video/intro.jpeg'/>
+        <video controls playsInline src='./video/intro.mp4' preload='false' poster={poster}/>
       </div>
     </section>
   )

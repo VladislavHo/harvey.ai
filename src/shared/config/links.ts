@@ -7,7 +7,7 @@ export const NAVBAR_LINKS_LIST = {
   ],
   "solutions" : [
     { href: "/solutions/innovation", label: "Innovation", text: "Scale expertise and impact to drive firmwide transformation." },
-    { href: "/solutions/in-houset", label: "In-House", text: "Streamline work and shift focus to strategy and speed." },
+    { href: "/solutions/in-house", label: "In-House", text: "Streamline work and shift focus to strategy and speed." },
     { href: "/solutions/transactional", label: "Transactional", text: "Accelerate due diligence, contract analysis, and review with precision and control." },
     { href: "/solutions/litigation", label: "Litigation", text: "Reduce manual effort, prioritize strategy, and drive stronger outcomes in litigation."}
   ]

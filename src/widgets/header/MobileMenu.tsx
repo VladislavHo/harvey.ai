@@ -8,7 +8,8 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ isOpen }: MobileMenuProps) {
   const [isPlatformOpen, setIsPlatformOpen] = useState(false);
-
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  
 
 
   return (
@@ -19,7 +20,7 @@ export default function MobileMenu({ isOpen }: MobileMenuProps) {
       <div className="flex flex-col h-full">
         <div className="nav-mobule--header flex-shrink-0"></div>
 
-        <nav className={`flex-1 overflow-y-auto ${!isPlatformOpen ? "pt-60": "pt-30" } transition-all`}>
+        <nav className={`flex-1 overflow-y-auto ${!isPlatformOpen && !isSolutionsOpen ? "pt-60" : "pt-30"} transition-all`}>
           <div className="flex flex-col gap-8">
             {/* Platform dropdown */}
             <div className="w-full">
@@ -44,7 +45,7 @@ export default function MobileMenu({ isOpen }: MobileMenuProps) {
                       className="block transition-colors duration-300 ease-out"
                     >
                       <h3 className="text-sm font-harvey-sans transition-colors duration-300 mb-[5px] text-white">
-                        {link.label} 
+                        {link.label}
                       </h3>
                       <p className="text-sm text-secondary">
                         {link.text}
@@ -55,13 +56,39 @@ export default function MobileMenu({ isOpen }: MobileMenuProps) {
               </div>
             </div>
 
-            {/* Other links */}
-            <a href="/about" className="text-white text-2xl font-harvey-sans">
-              <span className="heading-3 w-full">About</span>
-            </a>
-            <a href="/contact" className="text-white text-2xl font-harvey-sans">
-              <span className="heading-3 w-full">Contact</span>
-            </a>
+            <div className="w-full">
+              <button
+                onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+                className="w-full flex justify-between items-center"
+              >
+                <span className="heading-3 w-full text-left">Solutions</span>
+                <div className={`transition-transform duration-300 ${isSolutionsOpen ? 'rotate-90' : ''}`}>
+                  <ArrayIcon />
+                </div>
+              </button>
+
+              {/* Platform submenu */}
+              <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isSolutionsOpen ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'
+                }`}>
+                <div className="flex flex-col gap-4 pl-4 max-h-[400px] overflow-y-auto">
+                  {NAVBAR_LINKS_LIST.solutions.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      className="block transition-colors duration-300 ease-out"
+                    >
+                      <h3 className="text-sm font-harvey-sans transition-colors duration-300 mb-[5px] text-white">
+                        {link.label}
+                      </h3>
+                      <p className="text-sm text-secondary">
+                        {link.text}
+                      </p>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
           </div>
         </nav>
 

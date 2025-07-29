@@ -1,0 +1,114 @@
+.use-inovation .swiper-pagination {
+  position: relative;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  white-space: nowrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  grid-column: span 6 / span 6;
+  grid-column-start: 5;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.use-inovation .swiper {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.use-inovation .swiper-pagination-bullet {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+  outline: none;
+  position: relative;
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 1px solid;
+  background-color: var(--background-primary);
+  border-color: var(--border-secondary);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 1;
+  width: auto;
+  min-width: auto;
+  justify-content: center;
+  margin: 0;
+}
+
+.use-inovation .swiper-pagination-bullet:hover {
+  background-color: var(--background-secondary-hover);
+}
+
+/* CSS анимация для прогресс-бара */
+@keyframes progressFill {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.pagination-bullet-custom {
+  position: relative;
+  overflow: hidden;
+}
+
+.bullet-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transform: translateX(-100%);
+  z-index: 0;
+}
+
+.swiper-pagination-bullet-active .bullet-progress {
+  animation: progress-animation 8s linear forwards;
+}
+
+@keyframes progress-animation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.bullet-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* Для всех неактивных элементов прогресс всегда скрыт */
+.use-inovation .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) .bullet-progress {
+  transform: translateX(-100%) !important;
+  animation: none !important;
+  background-color: var(--background-primary);
+}
+
+.use-inovation .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) .bullet-text {
+  mix-blend-mode: normal;
+  color: var(--text-primary);
+}
+
+.use-inovation .swiper-pagination-bullet:not(.swiper-pagination-bullet-active):hover .bullet-text {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Для активного элемента прогресс изначально скрыт */
+.use-inovation .swiper-pagination-bullet-active .bullet-progress {
+  transform: translateX(-100%);
+  animation: none; /* По умолчанию анимация выключена */
+}

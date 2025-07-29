@@ -16,16 +16,16 @@ export default function Header() {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [lastHoveredLink, setLastHoveredLink] = useState<string>('platform');
   const [lineStyle, setLineStyle] = useState({ left: 0, width: 0, opacity: 0 });
-  const [isInitialized, setIsInitialized] = useState(false);
   const [isHeaderHovered, setIsHeaderHovered] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [fullLineStyle, setFullLineStyle] = useState({ left: 0, width: 0 });
+  // const [fullLineStyle, setFullLineStyle] = useState({ left: 0, width: 0 });
+  const fullLineStyle = { left: 0, width: 0};
   const [hoveredDropdownLink, setHoveredDropdownLink] = useState<string | null>(null);
 
   const headerRef = useRef<HTMLDivElement>(null);
   const platformRef = useRef<any>(null);
   const solutionsRef = useRef<HTMLLIElement>(null);
-  const contactRef = useRef<HTMLLIElement>(null);
+  const securityRef = useRef<HTMLLIElement>(null);
   const loginRef = useRef<HTMLSpanElement>(null);
 
 
@@ -87,44 +87,44 @@ export default function Header() {
   };
 
   // Функция для обновления полной линии (от первого до последнего элемента)
-  const updateFullLinePosition = () => {
-    if (platformRef.current && loginRef.current && headerRef.current) {
-      const headerRect = headerRef.current.getBoundingClientRect();
-      const firstRect = platformRef.current.getBoundingClientRect();
-      const lastRect = loginRef.current.getBoundingClientRect();
+  // const updateFullLinePosition = () => {
+  //   if (platformRef.current && loginRef.current && headerRef.current) {
+  //     const headerRect = headerRef.current.getBoundingClientRect();
+  //     const firstRect = platformRef.current.getBoundingClientRect();
+  //     const lastRect = loginRef.current.getBoundingClientRect();
 
-      setFullLineStyle({
-        left: firstRect.left - headerRect.left,
-        width: (lastRect.right - firstRect.left)
-      });
-    }
-  };
+  //     setFullLineStyle({
+  //       left: firstRect.left - headerRect.left,
+  //       width: (lastRect.right - firstRect.left)
+  //     });
+  //   }
+  // };
 
-  // Инициализация позиций линий
-  useEffect(() => {
-    if (platformRef.current && headerRef.current && loginRef.current && !isInitialized) {
-      updateLinePosition(platformRef, false);
-      updateFullLinePosition();
-      setIsInitialized(true);
-    }
-  }, [isInitialized]);
+  // // Инициализация позиций линий
+  // useEffect(() => {
+  //   if (platformRef.current && headerRef.current && loginRef.current && !isInitialized) {
+  //     updateLinePosition(platformRef, false);
+  //     updateFullLinePosition();
+  //     setIsInitialized(true);
+  //   }
+  // }, [isInitialized]);
 
-  // Обновляем полную линию при изменении размеров окна
-  useEffect(() => {
-    const handleResize = () => {
-      updateFullLinePosition();
-    };
+  // // Обновляем полную линию при изменении размеров окна
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     updateFullLinePosition();
+  //   };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  //   window.addEventListener('resize', handleResize);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, []);
 
   // Получаем ref по имени ссылки
   const getRefByName = (name: string): any => {
     switch (name) {
       case 'platform': return platformRef;
       case 'solutions': return solutionsRef;
-      case 'contact': return contactRef;
+      case 'security': return securityRef;
       case 'login': return loginRef;
       default: return platformRef;
     }
@@ -298,6 +298,17 @@ export default function Header() {
                         data={NAVBAR_LINKS_LIST.solutions}
                       />
                     )}
+                  </li>
+                  <li
+                    ref={securityRef}
+                    onMouseEnter={() => {
+                      handleMouseEnter('security');
+                    }}
+                    onMouseLeave={() => {
+                      handleMouseLeave();
+                    }}
+                  >
+                    <a className={`flex items-center h-full ${getLinkClasses('security')}`} href="/security">Security</a>
                   </li>
                   {/* <li
                     ref={contactRef}

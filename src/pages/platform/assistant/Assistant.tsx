@@ -1,12 +1,12 @@
-import { AboutPlatform, Ask, GeneralCounsel, IntroMain, VideoVault } from "../../widgets";
-import intro_image_video from "../../../public/img/intro_assistant.svg"
+import { MainWidgets, Ask, VideoVault } from "../../../widgets";
+import intro_image_video from "../../../../public/img/intro_assistant.svg"
 // import video from "../../../public/video/intro.mp4"
-import imagePerson from "../../../public/img/David_Wakeling.png"
+import imagePerson from "../../../../public/img/David_Wakeling.png"
 export default function Assistant() {
   return (
     <main>
       <div className="flex flex-col gap-xl">
-        <IntroMain
+        <MainWidgets.IntroMain
           subtitle="Assistant"
           title_1="Tailored to Your Expertise"
           title_2=""
@@ -17,7 +17,7 @@ export default function Assistant() {
         <VideoVault image={intro_image_video} video={"../../../public/video/intro.mp4"} />
         <Ask />
         <section className="">
-          <AboutPlatform
+          <MainWidgets.AboutPlatform
             imgName={"HWord.svg"}
             sup={""}
             title={"Harvey for Word"}
@@ -28,7 +28,7 @@ export default function Assistant() {
           />
         </section>
 
-        <GeneralCounsel
+        <MainWidgets.GeneralCounsel
           imagePerson={imagePerson}
           text="“We want to free the lawyer from mundane, routine tasks, so that they can focus on what matters — strategy, advice, and judgment. This has become the mantra for my team.”"
           name="David Wakeling"

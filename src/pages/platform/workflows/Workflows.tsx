@@ -1,13 +1,13 @@
-import { AboutPlatform, GeneralCounsel, IntroMain, MoveForwards, VideoVault } from "../../widgets";
-import intro_image_video from "../../../public/img/intro_workflows.svg"
+import intro_image_video from "../../../../public/img/intro_workflows.svg"
 // import video from "../../../public/video/intro.mp4"
-import imagePerson from "../../../public/img/David_Cunningham.png"
+import imagePerson from "../../../../public/img/David_Cunningham.png"
+import { MainWidgets, MoveForwards, VideoVault } from "../../../widgets"
 
 export default function Workflows() {
   return (
     <main>
       <div className="flex flex-col gap-xl">
-        <IntroMain
+        <MainWidgets.IntroMain
           subtitle="Workflows"
           title_1="Streamline Your Work"
           title_2=""
@@ -18,7 +18,7 @@ export default function Workflows() {
         <VideoVault image={intro_image_video} video={"../../../public/video/intro.mp4"} />
         <MoveForwards />
         <section className="">
-          <AboutPlatform
+          <MainWidgets.AboutPlatform
             imgName={"BuildCustom.svg"}
             sup={"Build Custom Workflows"}
             title={"Bring your firm’s expertise to life with fully custom AI-powered workflows you can design and launch in just a few clicks."}
@@ -29,7 +29,7 @@ export default function Workflows() {
           />
         </section>
 
-        <GeneralCounsel
+        <MainWidgets.GeneralCounsel
           imagePerson={imagePerson}
           text="“I hear repeatedly from our lawyers that generative AI has allowed them to do more work in the same amount of time.”"
           name="David Cunningham"

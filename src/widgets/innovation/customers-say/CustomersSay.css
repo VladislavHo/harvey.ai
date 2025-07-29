@@ -1,0 +1,59 @@
+.customer-say__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.customer-say__bullet {
+  position: relative;
+  width: auto;
+  height: auto;
+  /* padding: 8px 16px; */
+  margin: 0 5px;
+  border-radius: 20px;
+  background-color: transparent;
+  /* border: 1px solid #ccc; */
+  border: 0;
+  padding-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.customer-say__bullet-text {
+  position: relative;
+  z-index: 2;
+  color: #808080;
+}
+
+.customer-say__bullet-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+  transition: width 0.1s linear;
+}
+
+.customer-say__bullet.swiper-pagination-bullet-active {
+  /* background-color: #333; */
+  /* border-color: #333; */
+}
+
+.customer-say__bullet.swiper-pagination-bullet-active .customer-say__bullet-text {
+  color: #fff;
+}
+
+.customer-say__bullet.swiper-pagination-bullet-active .customer-say__bullet-progress {
+  animation: customer-say-progress-animation 8s linear forwards;
+}
+
+@keyframes customer-say-progress-animation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

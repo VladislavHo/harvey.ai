@@ -8,7 +8,6 @@
   gap: 0.5rem;
 }
 
-
 .use-platform .swiper {
   display: flex;
   flex-direction: column-reverse;
@@ -39,6 +38,11 @@
   background-color: var(--background-secondary-hover);
 }
 
+.use-platform .swiper-pagination-bullet-active {
+  color: #fff;
+  /* background: #007aff; */
+}
+
 .use-platform .bullet-progress {
   position: absolute;
   top: 0;
@@ -48,7 +52,12 @@
   background: white;
   z-index: 0;
   transform: translateX(-100%);
-  transition: transform 0.1s ease;
+  transition: transform 8s linear;
+}
+
+.use-platform .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) .bullet-progress {
+  transform: translateX(-100%);
+  background-color: var(--background-primary);
 }
 
 .use-platform .bullet-text {
@@ -57,15 +66,9 @@
   mix-blend-mode: difference;
 }
 
-.use-platform .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) .bullet-progress {
-  transform: translateX(-100%);
-    background-color: var(--background-primary);
-}
-
 .use-platform .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) .bullet-text {
   mix-blend-mode: normal;
   color: var(--text-primary);
-   /* background-color: var(--background-primary); */
 }
 
 .use-platform .swiper-pagination-bullet:not(.swiper-pagination-bullet-active):hover .bullet-text {
@@ -74,5 +77,61 @@
 }
 
 .use-platform .swiper-pagination-bullet-active .bullet-progress {
-  transform: translateX(-100%);
+  transform: translateX(0%);
+}
+
+.use-platform .bullet-text {
+  position: relative;
+  z-index: 1;
+}
+
+.use-platform__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.use-platform__bullet {
+  position: relative;
+  width: auto;
+  height: auto;
+  margin: 0 5px;
+  border-radius: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.use-platform__bullet-text {
+  position: relative;
+  z-index: 2;
+  color: #333;
+}
+
+.use-platform__bullet-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transition: width 0.1s linear;
+}
+
+.use-platform__bullet.swiper-pagination-bullet-active .use-platform__bullet-text {
+  color: #fff;
+}
+
+.use-platform__bullet.swiper-pagination-bullet-active .use-platform__bullet-progress {
+  animation: use-platform-progress-animation 8s linear forwards;
+}
+
+@keyframes use-platform-progress-animation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }

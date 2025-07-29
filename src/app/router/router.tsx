@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router";
 // import Main from "../../pages/main/Main";
 import { Layout } from "../../widgets";
-import { Assistant, Knowledge, Main, Vault, Workflows } from "../../pages";
+import { Assistant, InHouse, Innovation, Knowledge, Litigation, Main, Security, Transactional, Vault, Workflows } from "../../pages";
+
 
 
 
@@ -31,7 +32,28 @@ const router = createBrowserRouter([
       {
         path: "/platform/workflows",
         element: <Workflows />,
-      }
+      },
+      {
+        path: "/solutions/innovation",
+        element: <Innovation />,
+      },
+      {
+        path: "/solutions/in-house",
+        element: <InHouse />,
+      },
+      {
+        path: "/solutions/transactional",
+        element: <Transactional />,
+      },
+      {
+        path: "/solutions/litigation",
+        element: <Litigation />,
+      },
+      {
+        path: "/security",
+        element: <Security />,
+      },
+
     ],
   },
 ]);
