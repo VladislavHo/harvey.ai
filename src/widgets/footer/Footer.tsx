@@ -30,13 +30,13 @@ export default function Footer() {
   return (
     <footer className='max-w-default border-t border-gray-800 '>
       <MainWidgets.FooterUnlockInfo />
-      <div className="footer--main flex py-lg ">
+      <div className="footer--main flex py-lg md:flex-row flex-col md:gap-0 gap-10 ">
         <div className="logo--wrapper w-full">
           <div className="logo">
             <img src={logo} alt="logo" />
           </div>
         </div>
-        <div className="info flex w-full justify-end">
+        <div className="info flex w-full flex-col md:flex-row md:justify-end md:gap-0 gap-10">
           <div className="flex flex-col gap-4 w-[120px]">
             <small className="text-gray-600">
               Platform
@@ -95,7 +95,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="footer--bottom flex justify-between items-center">
+      <div className="footer--bottom flex justify-between items-center md:flex-row flex-col">
         <span className='universal-text-3 text-balance text-gray-600 lg:max-w-full'>Copyright © 2025 Counsel AI Corporation. All rights reserved.</span>
         <div className='flex gap-3 items-center '>
           <a className='flex transition-colors duration-300 ease-out w-max items-center justify-center text-center hover:text-gray-50-ivory active:text-gray-200 universal-text-3 text-balance text-gray-600 cursor-pointer' href="/">X</a>
