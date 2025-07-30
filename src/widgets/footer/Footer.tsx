@@ -36,7 +36,7 @@ export default function Footer() {
             <img src={logo} alt="logo" />
           </div>
         </div>
-        <div className="info flex w-full flex-col md:flex-row md:justify-end md:gap-0 gap-10">
+        <div className="info flex w-full md:justify-end justify-between flex-wrap md:gap-0 gap-10">
           <div className="flex flex-col gap-4 w-[120px]">
             <small className="text-gray-600">
               Platform
