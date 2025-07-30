@@ -54,11 +54,11 @@ export default function SliderInovation({items, title}: {items: InnovationItem[]
   return (
     <section className='use-inovation max-w-[1370px] w-full'>
       <div className="use-inovation--wrapper">
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between flex-col md:flex-row gap-10 items-center mb-8">
           <div className="text-left">
-            <h2 className='heading-3 text-balance max-w-[300px]'>How {title} Teams Use Harvey</h2>
+            <h2 className='heading-3 text-balance max-w-[300px] text-center md:text-start'>How {title} Teams Use Harvey</h2>
           </div>
-          <div ref={paginationRef} className="max-w-[700px] w-full swiper-pagination-custom flex flex-wrap gap-2 justify-end"></div>
+          <div ref={paginationRef} className="max-w-[700px] w-full swiper-pagination-custom flex flex-wrap gap-2 justify-center md:justify-end"></div>
         </div>
 
         <Swiper

@@ -89,6 +89,7 @@ export default function MobileMenu({ isOpen }: MobileMenuProps) {
               </div>
             </div>
 
+          <a href="/security" className="heading-3">Security</a>
           </div>
         </nav>
 

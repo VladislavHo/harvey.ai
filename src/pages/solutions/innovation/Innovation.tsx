@@ -12,7 +12,7 @@ export default function Innovation() {
     <main>
       <div className="flex flex-col gap-xl mt-xl">
         <Intro
-          sub={"Give Your Firm its Competitive Edge"}
+          sub={"For Innovation Teams"}
           title={"Give Your Firm its Competitive Edge"}
           text={" Lead firmwide transformation—embedding your expertise, elevating client work, and delivering measurable results."}
         />

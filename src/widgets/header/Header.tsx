@@ -1,6 +1,7 @@
 import { BurgerMenu, Link } from "../../shared/ui";
 import { useState, useEffect, useRef } from "react";
 import platformImage from "../../../public/img/header.png"
+import solutionImage from "../../../public/img/solution_header.png"
 import MobileMenu from "./MobileMenu";
 import ModalHeader from "./ModalHeader";
 import { NAVBAR_LINKS_LIST } from "../../shared/config/links";
@@ -294,7 +295,7 @@ export default function Header() {
                         handleDropdownMouseLeave={handleDropdownMouseLeave}
                         handleDropdownMouseEnter={handleDropdownMouseEnter}
                         hoveredDropdownLink={hoveredDropdownLink}
-                        platformImage={platformImage}
+                        platformImage={solutionImage}
                         data={NAVBAR_LINKS_LIST.solutions}
                       />
                     )}

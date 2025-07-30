@@ -12,7 +12,9 @@ export default function Intro({sub, title, text}: { sub: string, title: string, 
           <p className="text-balance md:text-pretty lg:text-lg universal-text-2 max-w-[570px]">
            {text}
           </p>
-          <Link label="Request a Demo" to="#" />
+          <div className="flex md:w-auto w-full  justify-center items-center">
+            <Link label="Request a Demo" to="#" />
+          </div>
         </div>
       </div>
     </section>

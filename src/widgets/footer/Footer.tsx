@@ -75,6 +75,24 @@ export default function Footer() {
               </a>
             ))}
           </div>
+
+          <div className="flex flex-col gap-4 w-[120px]">
+            <small className="text-gray-600">
+              Solutions
+            </small>
+            <a
+              className={getLinkClasses(`security-1`)}
+              href={'/security'}
+              onMouseEnter={() => setHoveredLink(`security-1`)}
+              onMouseLeave={() => setHoveredLink(null)}
+            >
+              Security
+              <span className="-ml-[2px] opacity-0 group-hover:opacity-100 group-hover:ml-1 transition-all ease-in-out">→</span>
+              {hoveredLink === 'security-1' && (
+                <div className={getUnderlineClasses('security-1')}></div>
+              )}
+            </a>
+          </div>
         </div>
       </div>
       <div className="footer--bottom flex justify-between items-center">

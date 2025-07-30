@@ -2,7 +2,7 @@ import { ArrayIcon } from "../../../svg/SVG";
 
 export default function CustomersCard(slide: any) {
   return (
-    <div className="card w-full flex justify-between flex-row-reverse">
+    <div className="card w-full flex justify-between flex-col md:flex-row-reverse">
       <div className="bg bg-secondary flex justify-center items-center p-18.5 order-2">
         <img className="h-full w-full object-cover" src={`/svg/logo_company/${slide.logo.name}.${slide.logo.format}`} alt={slide.logo.name} />
       </div>

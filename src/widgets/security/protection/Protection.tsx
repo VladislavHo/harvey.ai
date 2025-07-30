@@ -12,8 +12,8 @@ export default function Protection() {
         {PROTECTION_SECURITY_DATA_LIST.map((el, index) => (
           <article
             key={el.id || index}
-            className={`flex flex-col items-center mb-20 text-center md:items-start md:text-left
-              ${index === 1 || index === 4 || index === 2 || index === 5 ? 'md:border-l md:border-gray-700 pl-10' : 'pr-10'}`}
+            className={`flex flex-col max-w-[350px] md:max-w-full mx-auto items-center mb-20 text-center md:items-start md:text-left border-b border-gray-700 pb-10 md:border-b-0
+              ${index === 1 || index === 4 || index === 2 || index === 5 ? 'md:border-l md:border-gray-700 md:pl-10' : 'md:pr-10'} `}
           >
             <h4 className='mb-4 text-gray-50-ivory'>{el.title}</h4>
             <p className='font-normal text-gray-100'>{el.description}</p>
