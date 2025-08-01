@@ -34,9 +34,9 @@ export default function UsePlatform() {
           pagination={{
             clickable: true,
             renderBullet: function (index, className) {
-              return `<span class="${className} pagination-bullet-custom relative rounded-full overflow-hidden border bg-primary border-secondary text-primary" data-index="${index}">
+              return `<span class="${className} w-auto pagination-bullet-custom relative rounded-full overflow-hidden border bg-primary border-secondary text-primary" data-index="${index}">
                         <div class="bullet-progress absolute top-0 left-0 w-full h-full bg-white z-0"></div>
-                        <span class="bullet-text relative z-1 mix-blend-difference">${USE_PLATFORM_DATA_LIST[index].title || (index + 1)}</span>
+                        <span class="bullet-text w-auto relative z-1 mix-blend-difference text-sm">${USE_PLATFORM_DATA_LIST[index].title || (index + 1)}</span>
                       </span>`;
             }
           }}

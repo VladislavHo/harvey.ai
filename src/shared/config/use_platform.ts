@@ -2,8 +2,8 @@ export const USE_PLATFORM_DATA_LIST = [
   {
     id: 1,
     imgName: "1.svg",
-    sup: "Assistant",
-    title: "Tailored to Your Expertise",
+    sup: "",
+    title: "In-House Counsel",
     p: "Delegate complex tasks in natural language to your domain-specific personal assistant.",
     a: "Explore Assistant",
     to: "/",
@@ -12,8 +12,8 @@ export const USE_PLATFORM_DATA_LIST = [
     {
     id: 2,
     imgName: "4.svg",
-    sup: "Assistant",
-    title: "Tailored to Your Expertise",
+    sup: "",
+    title: "In-House Counsel",
     p: "Delegate complex tasks in natural language to your domain-specific personal assistant.",
     a: "Explore Assistant",
     to: "/",
@@ -22,8 +22,8 @@ export const USE_PLATFORM_DATA_LIST = [
     {
     id: 3,
     imgName: "6.svg",
-    sup: "Assistant",
-    title: "Tailored to Your Expertise",
+    sup: "",
+    title: "Transactional Work",
     p: "Delegate complex tasks in natural language to your domain-specific personal assistant.",
     a: "Explore Assistant",
     to: "/",
@@ -32,8 +32,8 @@ export const USE_PLATFORM_DATA_LIST = [
     {
     id: 4,
     imgName: "7.svg",
-    sup: "Assistant",
-    title: "Tailored to Your Expertise",
+    sup: "",
+    title: "Litigation Work",
     p: "Delegate complex tasks in natural language to your domain-specific personal assistant.",
     a: "Explore Assistant",
     to: "/",
